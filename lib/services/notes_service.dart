@@ -140,7 +140,7 @@ class NotesService{
     // remember to pass in the body and noteID in our API  i.e. the note
     // json.encode will convert our data to what dart can  comprehend
     // remember to pass in a content type as application/json in the headers
-      return http.put(API + '/notes/' + noteID, headers: headers)
+      return http.delete(API + '/notes/' + noteID, headers: headers)
       .then((data){
 
           // first check if request was successfull

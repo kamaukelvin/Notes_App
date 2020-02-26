@@ -104,7 +104,7 @@ class _NoteListState extends State<NoteList> {
                   builder:(_)=>NoteDelete()
                   ); 
 
-                  if (result){
+                  if (result!=null){
                    final deleteResult = await service.deleteNote(_apiResponse.data[index].noteID);
                     var message;
                     // checking if it was deleted successfully
@@ -113,7 +113,7 @@ class _NoteListState extends State<NoteList> {
                   } else{
                      message= deleteResult ?.errorMessage ?? 'An error occured';
                   }
-
+                
                   showDialog(
                     context: context, builder:(_)=>AlertDialog(
                       title: Text('Done'),
